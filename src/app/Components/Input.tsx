@@ -1,0 +1,39 @@
+type inputProps = {
+  htmlFor: string
+  label: string
+  placeholder: string
+  type: string
+  children: string | JSX.Element | JSX.Element[]
+  labelClassName?: string
+  inputClassName?: string
+}
+
+function Input({
+  htmlFor,
+  label,
+  children,
+  type,
+  placeholder,
+  labelClassName,
+  inputClassName,
+}: inputProps) {
+  return (
+    <label
+      htmlFor={htmlFor}
+      className={` relative flex flex-col gap-3 pb-4  text-right text-lg text-white  ${labelClassName}`}
+    >
+      {' '}
+      {label}
+      {children}
+      <input
+        type={type}
+        name={type}
+        id={htmlFor}
+        placeholder={placeholder}
+        className={`w-full rounded-2xl pb-3 pr-14 pt-4 text-right  text-persian-blue-800 ${inputClassName}`}
+      />
+    </label>
+  )
+}
+
+export default Input
