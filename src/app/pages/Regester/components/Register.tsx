@@ -36,8 +36,8 @@ const Register = ({ setLoginRegster }: any) => {
 
   return (
     <div className="">
-      <img src={mainLogoDark} className=" m-6 mx-auto h-16  " alt="mainLogo" />
-      <div className="mt-5 flex flex-col items-center justify-center gap-40 xl:mt-0 xl:flex-row-reverse">
+      <img src={mainLogoDark} className=" m-3 mx-auto h-16  " alt="mainLogo" />
+      <div className=" flex flex-col items-center justify-center gap-60 xl:mt-0 xl:flex-row-reverse xl:gap-40 2xl:gap-96">
         <div className=" rounded-3xl border-2 border-white  pt-4   sm:w-96">
           <span className="flex justify-end gap-10 pr-7  text-xl text-white">
             {' '}
@@ -59,17 +59,17 @@ const Register = ({ setLoginRegster }: any) => {
             >
               : رشته تحصیلی
               <Listbox value={selected} onChange={setSelected}>
-                <Listbox.Button className="relative rounded-xl bg-white p-3 text-persian-blue-700">
+                <Listbox.Button className="simplae-animation relative rounded-xl bg-white p-3 text-persian-blue-700">
                   {selected.FaMajor}
-
-                  <AcademicCapIcon className="pointer-events-none absolute right-0 top-2 h-7 pl-3 pr-3 text-persian-blue-700 " />
-                  <ChevronUpDownIcon className="pointer-events-none absolute left-0 top-2 h-7 pl-3 text-persian-blue-700 " />
+                  <AcademicCapIcon className="pointer-events-none absolute right-0 top-3 h-7 pl-3 pr-3 text-persian-blue-700 " />
+                  <ChevronUpDownIcon className="pointer-events-none absolute left-0 top-3 h-7 pl-3 text-persian-blue-700 " />
                 </Listbox.Button>
                 <Transition
                   as={Fragment}
-                  leave="transition-all ease-in-out duration-300"
+                  leave="transition-all ease-in-out duration-500"
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
+                  
                 >
                   <Listbox.Options className="rounded-2xl text-right text-white">
                     {majors.map(major => (
@@ -138,7 +138,7 @@ const Register = ({ setLoginRegster }: any) => {
           </q>
         </span>
       </div>
-      <div className="  mx-auto mt-6 text-center text-lg text-white ">
+      <div className="  mx-auto mt-6 text-center text-sm text-white ">
         توسعه یافته توسط
         <a href="" className="text-loghman">
           {' '}

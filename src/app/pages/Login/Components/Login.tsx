@@ -32,15 +32,15 @@ const Login = ({ setLoginRegster }: any) => {
 
   return (
     <div className="">
-      <img src={mainLogoDark} className=" m-6 mx-auto h-16  " alt="mainLogo" />
-      <div className="mt-40 flex flex-col items-center justify-center gap-40 xl:mt-0 xl:flex-row-reverse">
-        <div className=" rounded-3xl border-2 border-white  pt-4   sm:w-96">
+      <img src={mainLogoDark} className=" m-3 mx-auto h-16  " alt="mainLogo" />
+      <div className="mt-32 flex flex-col items-center justify-center gap-32 xl:mt-0 xl:flex-row-reverse xl:gap-40 2xl:gap-96">
+        <div className=" rounded-3xl border-2 border-white  pt-4  ">
           <span className="flex justify-end gap-10 pr-7  text-xl text-white">
             {' '}
             ورود به حساب کاربری <ArrowSmallRightIcon className="w-7" />
           </span>
 
-          <form className=" flex flex-col gap-6 p-5 pt-6 ">
+          <form className=" flex flex-col gap-2 p-5 pt-6 ">
             <Input
               label=": شماره دانشجویی"
               placeholder={'... شماره دانشجوی خود را وارد کنید'}
@@ -54,8 +54,12 @@ const Login = ({ setLoginRegster }: any) => {
               placeholder={'... رمز عبور خود را وارد کنید'}
               type="password"
               htmlFor="password"
+              inputClassName=""
             >
-              <KeyIcon className="iconIncideInput" />
+              <KeyIcon className="iconIncideInput relative" />
+              <button className="simplae-animation absolute bottom-6 left-3 rounded-xl border border-persian-blue-800 bg-white p-3 text-xs  text-persian-blue-800 hover:bg-persian-blue-800 hover:text-white">
+                فراموش کرده ام
+              </button>
             </Input>
             <span>
               <ButtonBlue text="ورود" />
@@ -83,7 +87,7 @@ const Login = ({ setLoginRegster }: any) => {
           </q>
         </span>
       </div>
-      <div className=" mt-26 m-6 mx-auto text-center text-lg text-white xl:mt-9">
+      <div className=" mt-26 m-6 mx-auto text-center  text-sm text-white xl:mt-9">
         توسعه یافته توسط
         <a href="" className="text-loghman">
           {' '}

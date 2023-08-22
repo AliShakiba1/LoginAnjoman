@@ -30,7 +30,7 @@ function Input({
         name={type}
         id={htmlFor}
         placeholder={placeholder}
-        className={`w-full rounded-2xl pb-3 pr-14 pt-4 text-right  text-persian-blue-800 ${inputClassName}`}
+        className={` w-full rounded-2xl  border-0 pb-3 pr-14 pt-4 text-right  text-persian-blue-800  outline-persian-blue-800  placeholder:text-[#5A6BD0] ${inputClassName} `}
       />
     </label>
   )
