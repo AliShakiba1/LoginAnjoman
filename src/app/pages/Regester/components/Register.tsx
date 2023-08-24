@@ -1,7 +1,7 @@
 import {
   mainLogoDark,
   uniLoginPic,
-} from '../../../../core/values/images-adderes'
+} from '../../../../core/values/images-address'
 
 import {
   AcademicCapIcon,
@@ -31,7 +31,7 @@ const majors = [
   },
 ]
 
-const Register = ({ setLoginRegster }: any) => {
+const Register = ({ setLoginRegster, setAboutORLogin }: any) => {
   const [selected, setSelected] = useState(majors[0])
 
   return (
@@ -41,7 +41,11 @@ const Register = ({ setLoginRegster }: any) => {
         <div className=" rounded-3xl border-2 border-white  pt-4   sm:w-96">
           <span className="flex justify-end gap-10 pr-7  text-xl text-white">
             {' '}
-            ساخت حساب کاربری <ArrowSmallRightIcon className="w-7" />
+            ساخت حساب کاربری{' '}
+            <ArrowSmallRightIcon
+              className="w-7"
+              onClick={() => setAboutORLogin('about')}
+            />
           </span>
 
           <form className=" flex flex-col  p-5 pt-6 ">
@@ -69,7 +73,6 @@ const Register = ({ setLoginRegster }: any) => {
                   leave="transition-all ease-in-out duration-500"
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
-                  
                 >
                   <Listbox.Options className="rounded-2xl text-right text-white">
                     {majors.map(major => (

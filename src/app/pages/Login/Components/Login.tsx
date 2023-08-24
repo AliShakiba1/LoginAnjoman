@@ -2,7 +2,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import {
   mainLogoDark,
   uniLoginPic,
-} from '../../../../core/values/images-adderes'
+} from '../../../../core/values/images-address'
 
 import {
   ArrowSmallRightIcon,
@@ -18,7 +18,7 @@ type FormData = {
   password: string
 }
 
-const Login = ({ setLoginRegster }: any) => {
+const Login = ({ setLoginRegster,setAboutORLogin }: any) => {
   const {
     register,
     setValue,
@@ -37,7 +37,11 @@ const Login = ({ setLoginRegster }: any) => {
         <div className=" rounded-3xl border-2 border-white  pt-4  ">
           <span className="flex justify-end gap-10 pr-7  text-xl text-white">
             {' '}
-            ورود به حساب کاربری <ArrowSmallRightIcon className="w-7" />
+            ورود به حساب کاربری{' '}
+            <ArrowSmallRightIcon
+              className="w-7"
+              onClick={() => setAboutORLogin('about')}
+            />
           </span>
 
           <form className=" flex flex-col gap-2 p-5 pt-6 ">

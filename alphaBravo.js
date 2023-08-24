@@ -44,6 +44,3 @@ for (let i = 100; i <= 999; i++) {
   }
 }
 console.log(counter)
-a
-
-%

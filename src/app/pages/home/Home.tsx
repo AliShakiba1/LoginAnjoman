@@ -1,38 +1,59 @@
 // import { Button } from '@material-tailwind/react'
 import { useEffect, useState } from 'react'
 import useDocumentTitle from '../../../core/utils/useDocumentTitle'
-// import { mainLogo } from '../../../core/values/images-adderes'
+// import { mainLogo } from '../../../core/values/images-address'
 import Login from '../Login/Components/Login'
 import Register from '../Regester/components/Register'
 // import NavBar from '../navbar/components/navbar'
 
 import Loading from '../Loading/Components/Loading'
+import AboutUs from '../aboutUs/Components/AboutUs'
+import NavBar from '../navbar/components/NavBar'
 import './styles/App.css'
 
 function Home() {
   useDocumentTitle('Anjoman Website')
   const [loginRegster, setLoginRegster] = useState('login')
   const [loading, setLoading] = useState(true)
+  const [aboutORLogin, setAboutORLogin] = useState('abouta')
 
   useEffect(() => {
-    const loading = setTimeout(() => {
-      setLoading(false)
-    }, 7000)
+    const loadingTimeOut = setTimeout(() => {
+      setLoading(!loading)
+    }, 1000)
     return () => {
-      clearTimeout(loading)
+      clearTimeout(loadingTimeOut)
     }
   }, [])
 
+  const witchPage =
+    loginRegster == 'login' ? (
+      <Login
+        setLoginRegster={setLoginRegster}
+        setAboutORLogin={setAboutORLogin}
+      />
+    ) : (
+      <Register
+        setLoginRegster={setLoginRegster}
+        setAboutORLogin={setAboutORLogin}
+      />
+    )
+
+  const aboutORLoginPage =
+    aboutORLogin == 'about' ? (
+      <AboutUs  />
+    ) : (
+      witchPage
+    )
+
   return (
     <>
-      {/* <NavBar /> */}
-      {/* <Login/> */}
-      {loading === true ? <Loading /> : null}
-      {loginRegster == 'login' ? (
-        <Login setLoginRegster={setLoginRegster} />
+      {loading === true ? (
+        <Loading />
       ) : (
-        <Register setLoginRegster={setLoginRegster} />
+        <NavBar setAboutORLogin={setAboutORLogin} aboutORLogin={aboutORLogin} />
       )}
+      {!loading && aboutORLoginPage}
     </>
   )
 }
