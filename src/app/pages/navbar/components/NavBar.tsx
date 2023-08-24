@@ -12,7 +12,7 @@ function NavBar(props: any) {
   return (
     <>
       <nav
-        className={`container mt-3 flex items-center justify-between  border-b-4   ${
+        className={`container mt-3 flex items-center justify-between  border-b-4 pb-3 lg:pb-0  ${
           props.aboutORLogin == 'about' ? 'block' : 'hidden'
         }`}
       >
@@ -22,11 +22,11 @@ function NavBar(props: any) {
             onClick={() => props.setAboutORLogin('abouta')}
           />
           <BellAlertIcon className="icon " />
-          <Cog6ToothIcon className="icon hidden md:block" />
+          <Cog6ToothIcon className="icon hidden lg:block" />
         </div>
-        <img src={mainLogoDark} alt="" className="h-[3.25rem] md:hidden" />
-        <EllipsisVerticalIcon className="icon md:hidden " />
-        <div className="mt-3 flex flex-row-reverse ">
+        <img src={mainLogoDark} alt="" className="h-[3.25rem] lg:hidden" />
+        <EllipsisVerticalIcon className="icon lg:hidden " />
+        <div className="mt-3 lg:flex flex-row-reverse  hidden">
           <NavButton text={'خانه'} />
           <NavButton text={'درس ها'} bulletClass={'!left-10'} />
           <NavButton bulletClass={'!left-14'} text={'گپ و گفتگو'} />
@@ -35,7 +35,7 @@ function NavBar(props: any) {
         <img
           src={mainLogoDark}
           alt=""
-          className="hidden h-[3.25rem] md:block"
+          className="hidden h-[3.25rem] lg:block"
         />
       </nav>
     </>
