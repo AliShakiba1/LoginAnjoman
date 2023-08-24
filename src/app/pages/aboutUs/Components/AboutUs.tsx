@@ -93,7 +93,7 @@ function AboutUs(props:any) {
             </Input>
             <ButtonBlue
               text="ثبت نظر"
-              btnBlueClass="bg-btn-gray-low mt-0    "
+              btnBlueClass="!bg-btn-gray-low mt-0    "
             />
           </form>
         </div>

@@ -20,7 +20,7 @@ function Home() {
   useEffect(() => {
     const loadingTimeOut = setTimeout(() => {
       setLoading(!loading)
-    }, 1000)
+    }, 5000)
     return () => {
       clearTimeout(loadingTimeOut)
     }

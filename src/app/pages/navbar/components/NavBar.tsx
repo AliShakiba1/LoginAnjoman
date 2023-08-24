@@ -28,9 +28,9 @@ function NavBar(props: any) {
         <EllipsisVerticalIcon className="icon md:hidden " />
         <div className="mt-3 flex flex-row-reverse ">
           <NavButton text={'خانه'} />
-          <NavButton text={'درس ها'} bulletClass={'left-10'} />
-          <NavButton bulletClass={'left-14'} text={'گپ و گفتگو'} />
-          <NavButton bulletClass={'left-10'} text={'درباره ما'} />
+          <NavButton text={'درس ها'} bulletClass={'!left-10'} />
+          <NavButton bulletClass={'!left-14'} text={'گپ و گفتگو'} />
+          <NavButton bulletClass={'!left-10'} text={'درباره ما'} />
         </div>
         <img
           src={mainLogoDark}
