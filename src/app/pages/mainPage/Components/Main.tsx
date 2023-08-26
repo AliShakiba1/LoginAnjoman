@@ -8,15 +8,42 @@ import { ChevronUpDownIcon, UserIcon } from '@heroicons/react/24/outline'
 
 const Main = () => {
   const date = new Date()
-
+  // trun now time to jalili
   const nowTime = {
     day: date.getDate(),
     month: date.getMonth() + 1,
     year: date.getFullYear(),
   }
+  const disabledDays = [
+    {
+      year: 1402,
+      month: 6,
+      day: 24,
+    },
+    {
+      year: 1402,
+      month: 6,
+      day: 7,
+    },
+    {
+      year: 1402,
+      month: 7,
+      day: 7,
+    },
+    {
+      year: 1402,
+      month: 6,
+      day: 16,
+    },
+    {
+      year: 1402,
+      month: 6,
+      day: 13,
+    },
+  ]
 
   const [selectedDay, setSelectedDay] = useState<DayValue>()
-  const [subClass, setsubClass] = useState(true)
+  const [subClass, setsubClass] = useState(false)
 
   const subClassHandler = () => {
     setsubClass(!subClass)
@@ -27,6 +54,7 @@ const Main = () => {
       <Calendar
         value={selectedDay}
         onChange={setSelectedDay}
+        disabledDays={disabledDays}
         shouldHighlightWeekends={true}
         colorPrimary="#3C6382"
         colorPrimaryLight="#9DB0C0"
@@ -48,7 +76,7 @@ const Main = () => {
               <ChevronUpDownIcon className="h-7 pr-36 " />
             </span>
             <div className={subClass == true ? '' : 'hidden'}>
-              <div className="simplae-animation mb-3 flex w-60 flex-col gap-1 rounded-xl bg-uncertain-Status p-3 shadow-xl hover:w-80">
+              <div className="simplae-animation classDet mb-3 flex w-60 flex-col gap-1 rounded-xl bg-uncertain-Status p-3 shadow-xl hover:w-80">
                 <p className="mb-2 flex items-center justify-center gap-3">
                   <UserIcon className="h-7" />
                   مقدمه نظریه زبان ها و ماشین ها (کلاس 310)
@@ -59,7 +87,7 @@ const Main = () => {
                   <p className=" text-xs ">7.30 صبح</p>
                 </div>
               </div>
-              <div className="simplae-animation mb-3 flex w-60 flex-col gap-1 rounded-xl bg-cancel-Status p-3 hover:w-80">
+              <div className="simplae-animation classDet mb-3 flex w-60 flex-col gap-1 rounded-xl bg-cancel-Status p-3 hover:w-80">
                 <p className="mb-2 flex items-center justify-center gap-3">
                   <UserIcon className="h-7" />
                   مقدمه نظریه زبان ها و ماشین ها (کلاس 310)
@@ -70,7 +98,7 @@ const Main = () => {
                   <p className=" text-xs ">7.30 صبح</p>
                 </div>
               </div>
-              <div className="simplae-animation mb-3 flex w-60 flex-col gap-1 rounded-xl bg-ongoing-Status p-3 hover:w-80">
+              <div className="simplae-animation classDet mb-3 flex w-60 flex-col gap-1 rounded-xl bg-ongoing-Status p-3 hover:w-80">
                 <p className="mb-2 flex items-center justify-center gap-3">
                   <UserIcon className="h-7" />
                   مقدمه نظریه زبان ها و ماشین ها (کلاس 310)
@@ -120,7 +148,12 @@ const Main = () => {
           </div>
         )}
       />
-      <div className="absolute top-0  z-20 flex h-[2.75rem] w-[20.68rem] items-center justify-end overflow-hidden rounded-t-lg bg-headLine pr-6 shadow-lg">
+      <div
+        className="absolute top-0  z-20 flex h-[2.75rem] w-[20.68rem] items-center justify-end overflow-hidden rounded-t-lg bg-headLine pr-6 shadow-lg"
+        onClick={() => {
+          console.log(selectedDay)
+        }}
+      >
         <p>« تقویم و مدیریت کلاس ها »</p>
       </div>
     </div>

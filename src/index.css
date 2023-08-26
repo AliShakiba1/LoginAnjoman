@@ -20,9 +20,22 @@
 }
 
 .icon {
-  @apply cursor-pointer  h-12 rounded-full  bg-white p-2 text-persian-blue-800;
+  @apply h-12  cursor-pointer rounded-full  bg-white p-2 text-persian-blue-800;
 }
 
 .simplae-animation {
   @apply !transition-all !duration-500 !ease-in-out;
+}
+
+.classDet {
+  animation: opacity 0.8s ease-in-out normal;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
 }

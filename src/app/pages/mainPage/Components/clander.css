@@ -12,7 +12,7 @@
 }
 
 .Calendar__weekDays {
-  @apply border-b-[0.1rem] border-black pb-3  text-sm text-black;
+  @apply border-b-[0.1rem] border-headLine pb-3  text-sm text-black;
 }
 
 .Calendar__monthArrow {
