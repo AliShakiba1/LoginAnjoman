@@ -10,12 +10,13 @@ import Loading from '../Loading/Components/Loading'
 import AboutUs from '../aboutUs/Components/AboutUs'
 import NavBar from '../navbar/components/NavBar'
 import './styles/App.css'
+import Main from '../mainPage/Components/Main'
 
 function Home() {
   useDocumentTitle('Anjoman Website')
   const [loginRegster, setLoginRegster] = useState('login')
   const [loading, setLoading] = useState(true)
-  const [aboutORLogin, setAboutORLogin] = useState('abouta')
+  const [aboutORLogin, setAboutORLogin] = useState('about')
 
   useEffect(() => {
     const loadingTimeOut = setTimeout(() => {
@@ -39,21 +40,19 @@ function Home() {
       />
     )
 
-  const aboutORLoginPage =
-    aboutORLogin == 'about' ? (
-      <AboutUs  />
-    ) : (
-      witchPage
-    )
+  const aboutORLoginPage = aboutORLogin == 'about' ? <AboutUs /> : witchPage
 
   return (
     <>
-      {loading === true ? (
+      <NavBar setAboutORLogin={setAboutORLogin} aboutORLogin={aboutORLogin} />
+      <Main />
+      {/* <AboutUs/> */}
+      {/* {loading === true ? (
         <Loading />
       ) : (
         <NavBar setAboutORLogin={setAboutORLogin} aboutORLogin={aboutORLogin} />
       )}
-      {!loading && aboutORLoginPage}
+      {!loading && aboutORLoginPage} */}
     </>
   )
 }
