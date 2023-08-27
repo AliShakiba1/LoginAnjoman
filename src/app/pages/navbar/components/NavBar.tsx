@@ -26,17 +26,17 @@ function NavBar(props: any) {
         </div>
         <img src={mainLogoDark} alt="" className="h-[3.25rem] lg:hidden" />
         <EllipsisVerticalIcon className="icon lg:hidden " />
-        <div className="mt-3 lg:flex flex-row-reverse  hidden">
+        <ul className="mt-3 lg:flex flex-row-reverse  hidden">
+        <img
+          src={mainLogoDark}
+          alt=""
+          className="hidden h-[3.25rem] pl-8 lg:block"
+        />
           <NavButton text={'خانه'} />
           <NavButton text={'درس ها'} bulletClass={'!left-10'} />
           <NavButton bulletClass={'!left-14'} text={'گپ و گفتگو'} />
           <NavButton bulletClass={'!left-10'} text={'درباره ما'} />
-        </div>
-        <img
-          src={mainLogoDark}
-          alt=""
-          className="hidden h-[3.25rem] lg:block"
-        />
+        </ul>
       </nav>
     </>
   )

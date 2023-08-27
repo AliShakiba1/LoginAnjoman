@@ -1,5 +1,5 @@
 // import { Button } from '@material-tailwind/react'
-import { useEffect, useState } from 'react'
+import { Suspense, lazy, useEffect, useState } from 'react'
 import useDocumentTitle from '../../../core/utils/useDocumentTitle'
 // import { mainLogo } from '../../../core/values/images-address'
 import Login from '../Login/Components/Login'
@@ -10,7 +10,9 @@ import Loading from '../Loading/Components/Loading'
 import AboutUs from '../aboutUs/Components/AboutUs'
 import NavBar from '../navbar/components/NavBar'
 import './styles/App.css'
-import Main from '../mainPage/Components/Main'
+
+import CalendarPart from '../../Components/Calendar/CalendarPart'
+import News from '../../Components/News/News'
 
 function Home() {
   useDocumentTitle('Anjoman Website')
@@ -41,18 +43,15 @@ function Home() {
     )
 
   const aboutORLoginPage = aboutORLogin == 'about' ? <AboutUs /> : witchPage
+  const [redering, setredering] = useState(0)
 
   return (
     <>
       <NavBar setAboutORLogin={setAboutORLogin} aboutORLogin={aboutORLogin} />
-      <Main />
-      {/* <AboutUs/> */}
-      {/* {loading === true ? (
-        <Loading />
-      ) : (
-        <NavBar setAboutORLogin={setAboutORLogin} aboutORLogin={aboutORLogin} />
-      )}
-      {!loading && aboutORLoginPage} */}
+      <main className="container mx-auto mt-4 flex flex-col">
+        <CalendarPart />
+        <News />
+      </main>
     </>
   )
 }
