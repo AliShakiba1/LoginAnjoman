@@ -1,3 +1,5 @@
+import { memo } from "react"
+
 function CopyRight(props :any) {
   return (
     <>
@@ -12,4 +14,4 @@ function CopyRight(props :any) {
   )
 }
 
-export default CopyRight
+export default memo(CopyRight)

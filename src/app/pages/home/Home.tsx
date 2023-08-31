@@ -47,9 +47,10 @@ function Home() {
 
   return (
     <>
-      <NavBar setAboutORLogin={setAboutORLogin} aboutORLogin={aboutORLogin} />
+      {/* <NavBar setAboutORLogin={setAboutORLogin} aboutORLogin={aboutORLogin} /> */}
       <main className="container mx-auto mt-4 flex flex-col">
         <CalendarPart />
+     
         <News />
       </main>
     </>

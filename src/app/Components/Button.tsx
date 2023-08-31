@@ -1,16 +1,17 @@
-export const ButtonBlue = (props: any) => {
+import { memo } from 'react'
+
+export const ButtonBlue = memo((props: any) => {
   return (
     <button
-      className={`mr-5 mt-7 w-32  rounded-xl bg-persian-blue-800 from-wedgewood-400 to-wedgewood-700 p-3 text-white   ${props.btnBlueClass}
+      className={`from-wedgewood-400 to-wedgewood-700 mr-5  mt-7 w-32 rounded-xl bg-persian-blue-800 p-3 text-white   ${props.btnBlueClass}
       
       `}
     >
       {props.text}
     </button>
   )
-}
-
-export const ButtonGray = (props: any) => {
+})
+export const ButtonGray = memo((props: any) => {
   return (
     <button
       onClick={props.onClick}
@@ -19,4 +20,4 @@ export const ButtonGray = (props: any) => {
       {props.children}
     </button>
   )
-}
+})

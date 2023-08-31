@@ -14,6 +14,7 @@ import { ButtonBlue, ButtonGray } from '../../../Components/Button'
 import CopyRight from '../../../Components/CopyRight'
 import Input from '../../../Components/Input'
 import member from '../member.png'
+import { memo } from 'react'
 
 function AboutUs(props:any) {
   return (
@@ -108,4 +109,4 @@ function AboutUs(props:any) {
   )
 }
 
-export default AboutUs
+export default memo(AboutUs)

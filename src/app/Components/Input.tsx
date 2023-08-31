@@ -1,3 +1,5 @@
+import { memo } from "react"
+
 type inputProps = {
   htmlFor: string
   label: string
@@ -39,4 +41,4 @@ function Input({
   )
 }
 
-export default Input
+export default memo(Input)
