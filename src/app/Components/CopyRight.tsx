@@ -1,14 +1,17 @@
 import { memo } from "react"
+import { Link } from "react-router-dom"
 
 function CopyRight(props :any) {
   return (
     <>
-      <div className={`mx-auto mt-6 text-center text-sm text-white  ${props.className}`}>
+      <div
+        className={`mx-auto mt-6 text-center text-sm text-white  ${props.className}`}
+      >
         توسعه یافته توسط
-        <a href="" className="text-loghman">
+        <Link to={'/'} className="text-loghman">
           {' '}
           گروه نرم افزار لقمان©
-        </a>
+        </Link>
       </div>
     </>
   )

@@ -24,7 +24,7 @@
 }
 
 .simplae-animation {
-  @apply !transition-all !duration-500 !ease-in-out;
+  @apply !transition-all !duration-500 !ease-in-out  ;
 }
 
 .classDet {

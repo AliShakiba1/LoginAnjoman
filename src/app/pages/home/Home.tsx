@@ -13,6 +13,7 @@ import './styles/App.css'
 
 import CalendarPart from '../../Components/Calendar/CalendarPart'
 import News from '../../Components/News/News'
+import { ArrowPathIcon } from '@heroicons/react/24/outline'
 
 function Home() {
   useDocumentTitle('Anjoman Website')
@@ -47,10 +48,12 @@ function Home() {
 
   return (
     <>
+     
+    
       {/* <NavBar setAboutORLogin={setAboutORLogin} aboutORLogin={aboutORLogin} /> */}
       <main className="container mx-auto mt-4 flex flex-col">
         <CalendarPart />
-     
+
         <News />
       </main>
     </>

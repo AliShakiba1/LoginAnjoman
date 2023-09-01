@@ -6,17 +6,23 @@ import {
   PhoneIcon,
   UserIcon,
 } from '@heroicons/react/24/outline'
+import { lazy, memo } from 'react'
 import {
   collaborationVector,
   youWantKnowMoreVector,
 } from '../../../../core/values/images-address'
-import { ButtonBlue, ButtonGray } from '../../../Components/Button'
-import CopyRight from '../../../Components/CopyRight'
-import Input from '../../../Components/Input'
-import member from '../member.png'
-import { memo } from 'react'
 
-function AboutUs(props:any) {
+import { ButtonBlue } from '../../../Components/Button'
+// import CopyRight from '../../../Components/CopyRight'
+// import Input from '../../../Components/Input'
+import member from '../member.png'
+
+const Input = lazy(() => import('../../../Components/Input'))
+const CopyRight = lazy(() => import('../../../Components/CopyRight'))
+// const ButtonBlue = lazy(() => import('../../../Components/Button///'))
+// const CopyRight = lazy(() => import('../../../Components/CopyRight'))
+
+function AboutUs() {
   return (
     <div className="container mx-auto  p-4 text-right">
       <h1 className="mb-3 text-lg">“چطور شد که این پلتفرم ایجاد شد” </h1>
@@ -104,6 +110,7 @@ function AboutUs(props:any) {
           className="hidden w-[27rem] lg:block"
         />
       </div>
+
       <CopyRight />
     </div>
   )

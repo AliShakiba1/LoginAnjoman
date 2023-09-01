@@ -12,6 +12,7 @@ import {
 
 import { ButtonBlue, ButtonGray } from '../../../Components/Button'
 import Input from '../../../Components/Input'
+import { Link } from 'react-router-dom'
 
 type FormData = {
   studentId: string
@@ -38,10 +39,12 @@ const Login = ({ setLoginRegster,setAboutORLogin }: any) => {
           <span className="flex justify-end gap-10 pr-7  text-xl text-white">
             {' '}
             ورود به حساب کاربری{' '}
-            <ArrowSmallRightIcon
-              className="w-7"
-              onClick={() => setAboutORLogin('about')}
-            />
+            <Link to={'/'}>
+              <ArrowSmallRightIcon
+                className="w-7"
+                onClick={() => setAboutORLogin('about')}
+              />
+            </Link>
           </span>
 
           <form className=" flex flex-col gap-2 p-5 pt-6 ">

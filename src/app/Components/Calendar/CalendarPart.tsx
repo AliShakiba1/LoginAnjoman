@@ -110,15 +110,22 @@ const CalendarPart = () => {
     },
   ]
 
+  
   const [selectedDay, setSelectedDay] = useState<DayValue>(nowTime)
   const [subClass, setsubClass] = useState(false)
-
+  
+  useEffect(() => {console.log(selectedDay)}, [selectedDay])
   const subClassHandler = () => {
     setsubClass(!subClass)
   }
 
   return (
-    <aside className=" container relative mx-auto flex items-center justify-center lg:block  ">
+    <aside
+      className=" container relative mx-auto flex items-center justify-center lg:block  "
+      onClick={() => {
+        // console.log(selectedDay)
+      }}
+    >
       <Calendar
         value={selectedDay}
         onChange={setSelectedDay}
@@ -137,11 +144,8 @@ const CalendarPart = () => {
       >
         <p>« تقویم و مدیریت کلاس ها »</p>
       </div>
-     
     </aside>
   )
 }
 
-
-
-export default memo(CalendarPart)
+export default CalendarPart
