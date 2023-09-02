@@ -30,20 +30,9 @@ function Home() {
     }
   }, [])
 
-  const witchPage =
-    loginRegster == 'login' ? (
-      <Login
-        setLoginRegster={setLoginRegster}
-        setAboutORLogin={setAboutORLogin}
-      />
-    ) : (
-      <Register
-        setLoginRegster={setLoginRegster}
-        setAboutORLogin={setAboutORLogin}
-      />
-    )
 
-  const aboutORLoginPage = aboutORLogin == 'about' ? <AboutUs /> : witchPage
+
+
   const [redering, setredering] = useState(0)
 
   return (
