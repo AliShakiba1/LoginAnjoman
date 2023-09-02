@@ -14,9 +14,9 @@ export const ButtonBlue = memo((props: any) => {
 export const ButtonGray = memo((props: any) => {
   return (
     <button
-    disabled={props.disabled}
+      disabled={props.disabled}
       onClick={props.onClick}
-      className={`  ${props.btnBlueClass}  rounded-xl border-2 border-white   bg-gray-low p-3  text-white`}
+      className={`  ${props.btnBlueClass}   h-12 rounded-xl border-2   border-white bg-gray-low  p-3 text-white `}
     >
       {props.children}
     </button>

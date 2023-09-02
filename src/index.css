@@ -20,11 +20,15 @@
 }
 
 .icon {
-  @apply h-12  cursor-pointer rounded-full  bg-white p-2 text-persian-blue-800;
+  @apply h-12  cursor-pointer rounded-full  bg-white p-2 text-news-Items;
 }
 
 .simplae-animation {
   @apply !transition-all !duration-500 !ease-in-out  ;
+}
+
+.simplae-animation2 {
+  @apply !transition-all !duration-500 !ease-in-out !delay-300 ;
 }
 
 .classDet {

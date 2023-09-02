@@ -48,7 +48,7 @@ const Login = () => {
               <KeyIcon className="iconIncideInput relative" />
               <Link
                 to={'/ForgotPassWord'}
-                className="simplae-animation absolute bottom-5 left-2 rounded-xl border border-news-Items bg-white p-3 text-xs  text-news-Items hover:bg-news-Items hover:text-white"
+                className="simplae-animation absolute bottom-6 left-2 rounded-xl border border-news-Items bg-white p-2 text-xs  text-news-Items hover:bg-news-Items hover:text-white"
               >
                 فراموش کرده ام
               </Link>
@@ -70,11 +70,12 @@ const Login = () => {
             className="relative hidden xl:inline"
           />
           <q className=" absolute bottom-20  left-20 hidden w-96 rounded-3xl bg-news-Items p-9 text-right text-white xl:inline">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم
-            ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم ایپسوم متن
-            ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم ایپسوم متن ساختگی با
-            تولید سادگی نامفهوم از صنعت چاپ لورم ایپسوم متن ساختگی با تولید
-            سادگی نامفهوم از صنعت چاپ
+            دانشــــــــــگاه آزاد اســـــــــــــــلامی
+            قوچــــــــــــــــــان؛ عضو توانمند شبکه آزمایشگاهی فناوری های
+            راهبردی ریاست جمهوری، دارای مجوز رسمی از وزارت علوم و تحقیقات و
+            فناوری در زمینه انرژی های نو، شیمی، نفت، مهندسی شیمی، گاز، صنایع
+            غذایی و ‌‌‌... تخصص ها با چندین سال سابقه فعالیت آماده پذیرش و
+            اسقرار و حمایت از ایده های نوآورانه می باشد.
           </q>
         </span>
       </div>

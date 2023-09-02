@@ -64,10 +64,10 @@ const Register = ({ setLoginRegster, setAboutORLogin }: any) => {
             >
               : رشته تحصیلی
               <Listbox value={selected} onChange={setSelected}>
-                <Listbox.Button className="simplae-animation relative rounded-xl bg-white p-3 text-persian-blue-700">
+                <Listbox.Button className="simplae-animation relative rounded-xl bg-white p-3 text-news-Items">
                   {selected.FaMajor}
-                  <AcademicCapIcon className="pointer-events-none absolute right-0 top-3 h-7 pl-3 pr-3 text-persian-blue-700 " />
-                  <ChevronUpDownIcon className="pointer-events-none absolute left-0 top-3 h-7 pl-3 text-persian-blue-700 " />
+                  <AcademicCapIcon className="pointer-events-none absolute right-0 top-3 h-7 pl-3 pr-3 text-news-Items " />
+                  <ChevronUpDownIcon className="pointer-events-none absolute left-0 top-3 h-7 pl-3 text-news-Items " />
                 </Listbox.Button>
                 <Transition
                   as={Fragment}
@@ -78,7 +78,7 @@ const Register = ({ setLoginRegster, setAboutORLogin }: any) => {
                   <Listbox.Options className="rounded-2xl text-right text-white">
                     {majors.map(major => (
                       <Listbox.Option
-                        className="relative cursor-pointer border border-l-0 border-r-0 border-t-0 border-b-gray-50 bg-persian-blue-700 p-2 pr-10"
+                        className="relative cursor-pointer border border-l-0 border-r-0 border-t-0 border-b-gray-50 bg-news-Items p-2 pr-10"
                         key={major.id}
                         value={major}
                       >
@@ -116,7 +116,7 @@ const Register = ({ setLoginRegster, setAboutORLogin }: any) => {
             </Input>
             <span>
               <ButtonBlue text="ثبت نام" />
-              <Link to='/login'>
+              <Link to="/login">
                 <ButtonGray text="ورود" btnBlueClass={` w-32`}>
                   ورود
                 </ButtonGray>
@@ -132,11 +132,12 @@ const Register = ({ setLoginRegster, setAboutORLogin }: any) => {
             className="relative hidden xl:inline"
           />
           <q className=" absolute bottom-20  left-20 hidden w-96 rounded-3xl bg-news-Items p-9 text-right text-white xl:inline">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم
-            ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم ایپسوم متن
-            ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم ایپسوم متن ساختگی با
-            تولید سادگی نامفهوم از صنعت چاپ لورم ایپسوم متن ساختگی با تولید
-            سادگی نامفهوم از صنعت چاپ
+            دانشــــــــــگاه آزاد اســـــــــــــــلامی
+            قوچــــــــــــــــــان؛ عضو توانمند شبکه آزمایشگاهی فناوری های
+            راهبردی ریاست جمهوری، دارای مجوز رسمی از وزارت علوم و تحقیقات و
+            فناوری در زمینه انرژی های نو، شیمی، نفت، مهندسی شیمی، گاز، صنایع
+            غذایی و ‌‌‌... تخصص ها با چندین سال سابقه فعالیت آماده پذیرش و
+            اسقرار و حمایت از ایده های نوآورانه می باشد.
           </q>
         </span>
       </div>

@@ -35,7 +35,7 @@ function Input({
         id={htmlFor}
         value={value}
         placeholder={placeholder}
-        className={` w-full rounded-2xl  border-0 pb-3 pr-14 pt-4 text-right text-sm  text-persian-blue-800  outline-persian-blue-800  placeholder:text-[#5A6BD0] ${inputClassName} `}
+        className={` w-full rounded-2xl  border-0 pb-3 pr-14 pt-4 text-right text-sm  text-[#728EA5]  outline-news-Items  placeholder:text-[#728EA5] ${inputClassName} `}
       />
     </label>
   )

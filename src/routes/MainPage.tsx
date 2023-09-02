@@ -25,7 +25,7 @@ const Login = lazy(() => import('../app/pages/Login/Components/Login'))
 
 const router = createBrowserRouter(
   createRoutesFromElements([
-    <Route>
+    <Route errorElement={<Page404 />}>
       <Route path="/" element={<NavBar />} errorElement={<Page404 />}>
         <Route index element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />

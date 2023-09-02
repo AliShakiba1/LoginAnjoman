@@ -13,10 +13,11 @@ import { lazy, useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 
 import { mainLogo, mainLogoDark } from '../../../../core/values/images-address'
+import NavBarPhone from './NavBarPhone'
 
 // import Loading from '../../Loading/Components/Loading'
 
-const Loading = lazy(()=>import('../../Loading/Components/Loading'))
+const Loading = lazy(() => import('../../Loading/Components/Loading'))
 const NavButton = lazy(() => import('../../../Components/NavButton'))
 
 function NavBar(props: any) {
@@ -24,7 +25,9 @@ function NavBar(props: any) {
   const [modal, setModal] = useState(false)
 
   const modalHandler = () => {
-    setModal(!modal)
+    setModal((perv)=> {
+      return !perv
+    })
   }
 
   useEffect(() => {
@@ -45,7 +48,7 @@ function NavBar(props: any) {
           {modal && (
             <div
               onClick={modalHandler}
-              className="fixed  z-[50] -mt-2 h-full w-full bg-black bg-opacity-50 "
+              className="fixed  z-[50] -mt-2 h-full w-full bg-black bg-opacity-80 "
             ></div>
           )}
           <nav
@@ -84,7 +87,7 @@ function NavBar(props: any) {
               <Cog6ToothIcon className="icon hidden lg:block" />
             </div>
             <img src={mainLogoDark} alt="" className="h-[3.25rem] lg:hidden" />
-            <EllipsisVerticalIcon className="icon lg:hidden " />
+            <EllipsisVerticalIcon onClick={modalHandler} className="icon lg:hidden " />
             <ul className="mt-3 hidden flex-row-reverse  lg:flex">
               <img
                 src={mainLogoDark}
@@ -105,6 +108,7 @@ function NavBar(props: any) {
               />
             </ul>
           </nav>
+          <NavBarPhone modalHandler={modalHandler} modal={modal} />
           <Outlet />
         </div>
       )}
