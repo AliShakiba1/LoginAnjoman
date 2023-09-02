@@ -11,15 +11,15 @@ import AboutUs from '../aboutUs/Components/AboutUs'
 import NavBar from '../navbar/components/NavBar'
 import './styles/App.css'
 
+import { ArrowPathIcon } from '@heroicons/react/24/outline'
 import CalendarPart from '../../Components/Calendar/CalendarPart'
 import News from '../../Components/News/News'
-import { ArrowPathIcon } from '@heroicons/react/24/outline'
 
 function Home() {
   useDocumentTitle('Anjoman Website')
   const [loginRegster, setLoginRegster] = useState('login')
-  const [loading, setLoading] = useState(true)
   const [aboutORLogin, setAboutORLogin] = useState('about')
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const loadingTimeOut = setTimeout(() => {
@@ -48,9 +48,8 @@ function Home() {
 
   return (
     <>
-     
-    
       {/* <NavBar setAboutORLogin={setAboutORLogin} aboutORLogin={aboutORLogin} /> */}
+      {/* {loading && <Loading />} */}
       <main className="container mx-auto mt-4 flex flex-col">
         <CalendarPart />
 

@@ -14,8 +14,10 @@ import {
 } from '@heroicons/react/24/outline'
 
 import { Listbox, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
+import { Fragment, memo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { ButtonBlue, ButtonGray } from '../../../Components/Button'
+import CopyRight from '../../../Components/CopyRight'
 import Input from '../../../Components/Input'
 
 const majors = [
@@ -42,10 +44,9 @@ const Register = ({ setLoginRegster, setAboutORLogin }: any) => {
           <span className="flex justify-end gap-10 pr-7  text-xl text-white">
             {' '}
             ساخت حساب کاربری{' '}
-            <ArrowSmallRightIcon
-              className="w-7"
-              onClick={() => setAboutORLogin('about')}
-            />
+            <Link to={'/'}>
+              <ArrowSmallRightIcon className="w-7" />
+            </Link>
           </span>
 
           <form className=" flex flex-col  p-5 pt-6 ">
@@ -115,13 +116,11 @@ const Register = ({ setLoginRegster, setAboutORLogin }: any) => {
             </Input>
             <span>
               <ButtonBlue text="ثبت نام" />
-              <ButtonGray
-                text="ورود"
-                btnBlueClass={` w-32`}
-                onClick={() => setLoginRegster('login')}
-              >
-                ورود
-              </ButtonGray>
+              <Link to='/login'>
+                <ButtonGray text="ورود" btnBlueClass={` w-32`}>
+                  ورود
+                </ButtonGray>
+              </Link>
             </span>
           </form>
         </div>
@@ -132,7 +131,7 @@ const Register = ({ setLoginRegster, setAboutORLogin }: any) => {
             alt="uniLoginPic"
             className="relative hidden xl:inline"
           />
-          <q className=" absolute bottom-20  left-20 hidden w-96 rounded-3xl bg-persian-blue-800 p-9 text-right text-white xl:inline">
+          <q className=" absolute bottom-20  left-20 hidden w-96 rounded-3xl bg-news-Items p-9 text-right text-white xl:inline">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم
             ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم ایپسوم متن
             ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم ایپسوم متن ساختگی با
@@ -141,15 +140,9 @@ const Register = ({ setLoginRegster, setAboutORLogin }: any) => {
           </q>
         </span>
       </div>
-      <div className="  mx-auto mt-6 text-center text-sm text-white ">
-        توسعه یافته توسط
-        <a href="" className="text-loghman">
-          {' '}
-          گروه نرم افزار لقمان©
-        </a>
-      </div>
+      <CopyRight />
     </div>
   )
 }
 
-export default Register
+export default memo(Register)

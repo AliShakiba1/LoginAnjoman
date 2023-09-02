@@ -110,11 +110,19 @@ const CalendarPart = () => {
     },
   ]
 
-  
   const [selectedDay, setSelectedDay] = useState<DayValue>(nowTime)
   const [subClass, setsubClass] = useState(false)
-  
-  useEffect(() => {console.log(selectedDay)}, [selectedDay])
+
+  useEffect(() => {
+    const sendHttp = setTimeout(() => {
+      console.log(selectedDay)
+    }, 4000)
+
+    return () => {
+      clearTimeout(sendHttp)
+    }
+  }, [selectedDay])
+
   const subClassHandler = () => {
     setsubClass(!subClass)
   }

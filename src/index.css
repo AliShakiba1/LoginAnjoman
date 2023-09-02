@@ -16,7 +16,7 @@
 }
 
 .iconIncideInput {
-  @apply pointer-events-none absolute right-0 top-[4.2rem] h-8 -translate-y-1/2 transform pr-4 text-persian-blue-800;
+  @apply pointer-events-none absolute right-0 top-[4.0rem] h-8 -translate-y-1/2 transform pr-4 text-news-Items;
 }
 
 .icon {

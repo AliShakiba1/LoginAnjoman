@@ -1,21 +1,14 @@
-import {
-  mainLogoDark,
-  uniLoginPic,
-} from '../../../../core/values/images-address'
+import { ArrowSmallRightIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { memo } from 'react'
+import { mainLogoDark, uniLoginPic } from '../../../core/values/images-address'
 
-import {
-  ArrowSmallRightIcon,
-  KeyIcon,
-  UserIcon,
-} from '@heroicons/react/24/outline'
+import CopyRight from '../../Components/CopyRight'
 
 import { Link } from 'react-router-dom'
-import { ButtonBlue, ButtonGray } from '../../../Components/Button'
-import CopyRight from '../../../Components/CopyRight'
-import Input from '../../../Components/Input'
-import { memo } from 'react'
+import { ButtonBlue, ButtonGray } from '../../Components/Button'
+import Input from '../../Components/Input'
 
-const Login = () => {
+function ForgotPassWord() {
   return (
     <div>
       <img src={mainLogoDark} className=" m-3 mx-auto h-16  " alt="mainLogo" />
@@ -23,43 +16,32 @@ const Login = () => {
         <div className=" pt4 rounded-3xl border-2  border-white p-1 ">
           <span className="flex justify-end gap-10 pr-7 pt-4 text-xl text-white">
             {' '}
-            ورود به حساب کاربری{' '}
-            <Link to={'/'}>
+            بازیابی رمز عبور{' '}
+            <Link to={'/login'}>
               <ArrowSmallRightIcon className="w-7" />
             </Link>
           </span>
 
           <form className=" flex flex-col gap-2 p-5 pt-6 ">
             <Input
-              label=": شماره دانشجویی"
-              placeholder={'... شماره دانشجوی خود را وارد کنید'}
+              label=": شماره تلفن"
+              placeholder={'... شماره تلفن خود را وارد کنید'}
               htmlFor="studentId"
               type="text"
             >
-              <UserIcon className="iconIncideInput" />
+              <PhoneIcon className="iconIncideInput" />
             </Input>
-            <Input
-              label=": رمز عبور"
-              placeholder={'... رمز عبور خود را وارد کنید'}
-              type="password"
-              htmlFor="password"
-              inputClassName=""
-            >
-              <KeyIcon className="iconIncideInput relative" />
-              <Link
-                to={'/ForgotPassWord'}
-                className="simplae-animation absolute bottom-5 left-2 rounded-xl border border-news-Items bg-white p-3 text-xs  text-news-Items hover:bg-news-Items hover:text-white"
-              >
-                فراموش کرده ام
-              </Link>
-            </Input>
+
             <span>
               <ButtonBlue text="ورود" />
-              <Link to={'/Register'}>
-                <ButtonGray text="ساخت پروفایل کاربری">
-                  ساخت پروفایل کاربری
-                </ButtonGray>
-              </Link>
+
+              <ButtonGray
+                text="ساخت پروفایل کاربری"
+                btnBlueClass="opacity-0"
+                disabled={true}
+              >
+                ساخت پروفایل کاربری
+              </ButtonGray>
             </span>
           </form>
         </div>
@@ -83,4 +65,4 @@ const Login = () => {
   )
 }
 
-export default memo(Login)
+export default memo(ForgotPassWord)
