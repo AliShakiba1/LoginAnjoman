@@ -6,6 +6,7 @@ export const ButtonBlue = memo((props: any) => {
       className={`from-wedgewood-400 to-wedgewood-700 mr-5  mt-7 w-32 rounded-xl bg-news-Items p-3 text-white   ${props.btnBlueClass}
       
       `}
+      type={props.type}
     >
       {props.text}
     </button>

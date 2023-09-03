@@ -4,11 +4,24 @@ import { mainLogoDark, uniLoginPic } from '../../../core/values/images-address'
 
 import CopyRight from '../../Components/CopyRight'
 
+import { useFormik } from 'formik'
 import { Link } from 'react-router-dom'
 import { ButtonBlue, ButtonGray } from '../../Components/Button'
 import Input from '../../Components/Input'
+import { forgerPasswordSchema } from '../../helper/loginValidation'
 
 function ForgotPassWord() {
+  const initialValues = {
+    phoneNumber: '',
+  }
+
+  const formik = useFormik({
+    initialValues: initialValues,
+    onSubmit: values => {
+      console.log(JSON.stringify(values, null, 2))
+    },
+    validationSchema: forgerPasswordSchema,
+  })
   return (
     <div>
       <img src={mainLogoDark} className=" m-3 mx-auto h-16  " alt="mainLogo" />
@@ -22,18 +35,29 @@ function ForgotPassWord() {
             </Link>
           </span>
 
-          <form className=" flex flex-col gap-2 p-5 pt-6 ">
+          <form
+            className=" flex flex-col gap-2 p-5 pt-6 "
+            onSubmit={formik.handleSubmit}
+          >
             <Input
               label=": شماره تلفن"
               placeholder={'... شماره تلفن خود را وارد کنید'}
-              htmlFor="studentId"
+              htmlFor="phoneNumber"
               type="text"
+              value={formik.values.phoneNumber}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.phoneNumber && formik.errors.phoneNumber
+                  ? formik.errors.phoneNumber
+                  : ''
+              }
             >
               <PhoneIcon className="iconIncideInput" />
             </Input>
 
             <span>
-              <ButtonBlue text="ارسال" />
+              <ButtonBlue text="ارسال" type="submit" />
 
               <ButtonGray
                 text="ساخت پروفایل کاربری"

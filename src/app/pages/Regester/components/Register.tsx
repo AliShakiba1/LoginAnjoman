@@ -4,21 +4,21 @@ import {
 } from '../../../../core/values/images-address'
 
 import {
-  AcademicCapIcon,
+
   ArrowSmallRightIcon,
-  ChevronUpDownIcon,
-  KeyIcon,
-  PhoneIcon,
-  StarIcon,
-  UserIcon,
+ 
 } from '@heroicons/react/24/outline'
 
-import { Listbox, Transition } from '@headlessui/react'
-import { Fragment, memo, useState } from 'react'
+import { memo  } from 'react'
 import { Link } from 'react-router-dom'
-import { ButtonBlue, ButtonGray } from '../../../Components/Button'
+
 import CopyRight from '../../../Components/CopyRight'
-import Input from '../../../Components/Input'
+
+import { Formik } from 'formik'
+import FormComponents from './FormComponents'
+import { IRegisterFrom } from './Register.types'
+import { registerSchema } from '../../../helper/loginValidation'
+
 
 const majors = [
   {
@@ -33,8 +33,15 @@ const majors = [
   },
 ]
 
-const Register = ({ setLoginRegster, setAboutORLogin }: any) => {
-  const [selected, setSelected] = useState(majors[0])
+
+const Register = () => {
+  const initialValues: IRegisterFrom = {
+    major: {},
+    studentId: '',
+    password: '',
+    Fname: '',
+    phoneNumber: '',
+  }
 
   return (
     <div className="">
@@ -49,80 +56,13 @@ const Register = ({ setLoginRegster, setAboutORLogin }: any) => {
             </Link>
           </span>
 
-          <form className=" flex flex-col  p-5 pt-6 ">
-            <Input
-              label=": نام و نام خانوادگی "
-              placeholder={'... نام و نام خانوادگی خود را وارد کنید'}
-              htmlFor="firstLastName"
-              type="text"
-            >
-              <UserIcon className="iconIncideInput" />
-            </Input>
-            <label
-              htmlFor=""
-              className="flex flex-col gap-3 pb-4  text-right text-lg text-white  "
-            >
-              : رشته تحصیلی
-              <Listbox value={selected} onChange={setSelected}>
-                <Listbox.Button className="simplae-animation relative rounded-xl bg-white p-3 text-news-Items">
-                  {selected.FaMajor}
-                  <AcademicCapIcon className="pointer-events-none absolute right-0 top-3 h-7 pl-3 pr-3 text-news-Items " />
-                  <ChevronUpDownIcon className="pointer-events-none absolute left-0 top-3 h-7 pl-3 text-news-Items " />
-                </Listbox.Button>
-                <Transition
-                  as={Fragment}
-                  leave="transition-all ease-in-out duration-500"
-                  leaveFrom="opacity-100"
-                  leaveTo="opacity-0"
-                >
-                  <Listbox.Options className="rounded-2xl text-right text-white">
-                    {majors.map(major => (
-                      <Listbox.Option
-                        className="relative cursor-pointer border border-l-0 border-r-0 border-t-0 border-b-gray-50 bg-news-Items p-2 pr-10"
-                        key={major.id}
-                        value={major}
-                      >
-                        {major.FaMajor}
-                        <StarIcon className="absolute right-0 top-1 h-7 pr-2" />
-                      </Listbox.Option>
-                    ))}
-                  </Listbox.Options>
-                </Transition>
-              </Listbox>
-            </label>
-            <Input
-              label=": شماره دانشجویی"
-              placeholder={'... شماره دانشجوی خود را وارد کنید'}
-              htmlFor="studentId"
-              type="text"
-            >
-              <UserIcon className="iconIncideInput" />
-            </Input>
-            <Input
-              label=": شماره همراه"
-              placeholder={'... شماره همراه خود را وارد کنید'}
-              type="text"
-              htmlFor="phoneNumber"
-            >
-              <PhoneIcon className="iconIncideInput" />
-            </Input>
-            <Input
-              label=": رمز عبور"
-              placeholder={'... رمز عبور خود را وارد کنید'}
-              type="password"
-              htmlFor="password"
-            >
-              <KeyIcon className="iconIncideInput" />
-            </Input>
-            <span>
-              <ButtonBlue text="ثبت نام" />
-              <Link to="/login">
-                <ButtonGray text="ورود" btnBlueClass={` w-32`}>
-                  ورود
-                </ButtonGray>
-              </Link>
-            </span>
-          </form>
+          <Formik
+            initialValues={initialValues}
+            onSubmit={v => console.log(JSON.stringify(v, null, 2))}
+            validationSchema={registerSchema}
+          >
+            {formik => <FormComponents formik={formik} majors={majors} />}
+          </Formik>
         </div>
 
         <span className="relative hidden xl:inline">

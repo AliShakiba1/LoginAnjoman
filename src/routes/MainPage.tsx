@@ -12,9 +12,9 @@ import CalendarPart from '../app/Components/Calendar/CalendarPart'
 // import AboutUs from '../app/pages/aboutUs/Components/AboutUs'
 // import Home from '../app/pages/home/Home'
 // import NavBar from '../app/pages/navbar/components/NavBar'
+import ForgotPassWord from '../app/pages/ForgotPassWord/ForgotPassWord'
 import Loading from '../app/pages/Loading/Components/Loading'
 import Register from '../app/pages/Regester/components/Register'
-import ForgotPassWord from '../app/pages/ForgotPassWord/ForgotPassWord'
 
 const NavBar = lazy(() => import('../app/pages/navbar/components/NavBar'))
 const AboutUs = lazy(() => import('../app/pages/aboutUs/Components/AboutUs'))
@@ -25,26 +25,26 @@ const Login = lazy(() => import('../app/pages/Login/Components/Login'))
 
 const router = createBrowserRouter(
   createRoutesFromElements([
-    <Route errorElement={<Page404 />}>
-      <Route path="/" element={<NavBar />} errorElement={<Page404 />}>
-        <Route index element={<Home />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-      </Route>
-      ,
-      <Route path="/login" element={<Login />} />,
-      <Route path="/Register" element={<Register />} />,
-      <Route path="/ForgotPassWord" element={<ForgotPassWord />} />,
+    <Route path="/" element={<NavBar />} errorElement={<Page404 />}>
+      <Route index element={<Home />} />
+      <Route path="/aboutus" element={<AboutUs />} />
     </Route>,
+    <Route path="/login" element={<Login />} />,
+    <Route path="/Register" element={<Register />} />,
+    <Route path="/ForgotPassWord" element={<ForgotPassWord />} />,
   ]),
 )
 
+
+
 function MainPage() {
-  
   return (
     <>
       <Suspense
         fallback={
-          <ArrowPathIcon className="mx-auto h-screen w-32 animate-spin" />
+          <div className='h-screen w-full flex justify-center items-center'>
+            <div className="custom-loader"></div>
+          </div>
         }
       >
         <RouterProvider router={router} />

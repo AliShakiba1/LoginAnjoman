@@ -9,13 +9,29 @@ import {
   UserIcon,
 } from '@heroicons/react/24/outline'
 
+import { useFormik } from 'formik'
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { ButtonBlue, ButtonGray } from '../../../Components/Button'
 import CopyRight from '../../../Components/CopyRight'
 import Input from '../../../Components/Input'
-import { memo } from 'react'
+import { loginSchema } from '../../../helper/loginValidation'
+import IloginFrom from './Login.types'
 
 const Login = () => {
+  const initialValues: IloginFrom = {
+    studentId: '',
+    password: '',
+  }
+
+  const formik = useFormik({
+    initialValues: initialValues,
+    onSubmit: values => {
+      console.log(JSON.stringify(values, null, 2))
+    },
+    validationSchema: loginSchema,
+  })
+
   return (
     <div>
       <img src={mainLogoDark} className=" m-3 mx-auto h-16  " alt="mainLogo" />
@@ -29,16 +45,36 @@ const Login = () => {
             </Link>
           </span>
 
-          <form className=" flex flex-col gap-2 p-5 pt-6 ">
+          <form
+            className=" flex flex-col gap-2 p-5 pt-6 "
+            onSubmit={formik.handleSubmit}
+            // onSubmit={formik.submitForm}
+          >
             <Input
               label=": شماره دانشجویی"
               placeholder={'... شماره دانشجوی خود را وارد کنید'}
               htmlFor="studentId"
               type="text"
+              value={formik.values.studentId}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.studentId && formik.errors.studentId
+                  ? formik.errors.studentId
+                  : ''
+              }
             >
               <UserIcon className="iconIncideInput" />
             </Input>
             <Input
+              value={formik.values.password}
+              onBlur={formik.handleBlur}
+              onChange={formik.handleChange}
+              error={
+                formik.touched.password && formik.errors.password
+                  ? formik.errors.password
+                  : ''
+              }
               label=": رمز عبور"
               placeholder={'... رمز عبور خود را وارد کنید'}
               type="password"
@@ -54,7 +90,7 @@ const Login = () => {
               </Link>
             </Input>
             <span>
-              <ButtonBlue text="ورود" />
+              <ButtonBlue text="ورود" type={'submit'} />
               <Link to={'/Register'}>
                 <ButtonGray text="ساخت پروفایل کاربری">
                   ساخت پروفایل کاربری
