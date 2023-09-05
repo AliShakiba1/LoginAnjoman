@@ -11,7 +11,7 @@ type inputProps = {
   onChange?: any
   value?: any
   error?: any
-  onBlur?:any
+  onBlur?: any
 }
 
 function Input({
@@ -44,7 +44,7 @@ function Input({
           placeholder={placeholder}
           onChange={onChange}
           onBlur={onBlur}
-          className={` w-full rounded-2xl  border-0 pb-3 pr-14 pt-4 text-right text-sm  text-[#728EA5]  outline-news-Items  placeholder:text-[#728EA5] ${inputClassName} `}
+          className={` w-full rounded-2xl  border-0 pb-3 pr-14 pt-4 text-right text-sm  text-[#728EA5] outline-none  placeholder:text-[#728EA5] ${inputClassName} `}
         />
       </label>
       {error && (

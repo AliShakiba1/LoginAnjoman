@@ -15,6 +15,7 @@ import CalendarPart from '../app/Components/Calendar/CalendarPart'
 import ForgotPassWord from '../app/pages/ForgotPassWord/ForgotPassWord'
 import Loading from '../app/pages/Loading/Components/Loading'
 import Register from '../app/pages/Regester/components/Register'
+import NewNavBar from '../app/pages/navbar/components/NewNavBar'
 
 const NavBar = lazy(() => import('../app/pages/navbar/components/NavBar'))
 const AboutUs = lazy(() => import('../app/pages/aboutUs/Components/AboutUs'))
@@ -25,7 +26,7 @@ const Login = lazy(() => import('../app/pages/Login/Components/Login'))
 
 const router = createBrowserRouter(
   createRoutesFromElements([
-    <Route path="/" element={<NavBar />} errorElement={<Page404 />}>
+    <Route path="/" element={<NewNavBar/>} errorElement={<Page404 />}>
       <Route index element={<Home />} />
       <Route path="/aboutus" element={<AboutUs />} />
     </Route>,

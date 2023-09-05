@@ -129,7 +129,7 @@ const CalendarPart = () => {
 
   return (
     <aside
-      className=" container relative mx-auto flex items-center justify-center lg:block  "
+      className=" container relative mx-auto flex items-center justify-center shadow-none lg:block  "
       onClick={() => {
         // console.log(selectedDay)
       }}
@@ -142,12 +142,12 @@ const CalendarPart = () => {
         colorPrimary="#3C6382"
         colorPrimaryLight="#9DB0C0"
         locale="fa"
-        calendarClassName="custom-calendar sm:!w-[38em]   "
-        calendarTodayClassName="custom-today-day"
+        calendarClassName="custom-calendar sm:!w-[38em]  shadow-none "
+        calendarTodayClassName="custom-today-day shadow-none"
         slideAnimationDuration="0.6s"
       />
       <div
-        className="absolute top-0  z-20 flex h-[2.75rem] w-[20.68rem] items-center  justify-end rounded-t-lg bg-headLine pr-6 shadow-lg
+        className="absolute top-0  flex h-[2.75rem] w-[20.68rem] items-center  justify-end rounded-t-lg bg-headLine pr-6 shadow-lg
         sm:w-[23.75rem] "
       >
         <p>« تقویم و مدیریت کلاس ها »</p>

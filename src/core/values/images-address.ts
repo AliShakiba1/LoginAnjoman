@@ -1,6 +1,6 @@
 import { lazy } from 'react'
 
-import anjomanLogoDark from '../../../public/anjoman-logo-dark.svg'
+import anjomanLogoDark from '../../../public/anjoman-logo-dark.png'
 import anjomanLogo from '../../../public/anjoman-logo.svg'
 import Bullet from '../../../public/bell-alert.svg'
 import collaboration from '../../../public/collaboration.svg'
