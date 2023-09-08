@@ -18,6 +18,9 @@ module.exports = {
       },
     },
     extend: {
+      gridRow: {
+        'grid-template-rows': ' repeat(5, minmax(0, 1fr));',
+      },
       colors: {
         'persian-blue': {
           50: '#ebf5ff',

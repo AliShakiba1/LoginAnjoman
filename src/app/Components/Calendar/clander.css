@@ -34,23 +34,14 @@
 .-right {
   transform: rotate(180deg) !important;
 }
-.Calendar__monthSelectorItem{
-  @apply bg-news-Items rounded-xl 
+.Calendar__monthSelectorItem {
+  @apply rounded-xl bg-news-Items;
 }
 
 .Calendar__yearSelectorItem {
-  @apply bg-news-Items rounded-xl
-
+  @apply rounded-xl bg-news-Items;
 }
-.Calendar__header::before {
-  content: '« تقویم و مدیریت کلاس ها » ';
 
-  position: absolute;
-  top: 1rem;
-  left: 5rem;
-  color: #3c6382;
-  font-size: 0.94rem;
-}
 .Calendar__header {
   @apply pt-10;
 }
@@ -80,7 +71,14 @@
 }
 *::-webkit-scrollbar-thumb {
   direction: rtl;
-  background-color: #566879;
+  background-color: #7e92a5;
+  border-radius: 20px;
+  border: transparent;
+}
+
+.CalendarFooterPart::-webkit-scrollbar-thumb {
+  direction: rtl;
+  background-color: #ff0000f3 !important ;
   border-radius: 20px;
   border: transparent;
 }
