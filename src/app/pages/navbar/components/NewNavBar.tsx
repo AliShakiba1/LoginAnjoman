@@ -35,6 +35,7 @@ import {
 import logoInMobile from './logoinmenuphone.svg'
 
 import CopyRight from '@/app/Components/CopyRight'
+import HoverCardMain from '@/app/Components/HoverCardMain'
 import { mainLogo, mainLogoDark } from '@/core/values/images-address'
 
 const items = [
@@ -68,35 +69,46 @@ const items = [
   },
 ]
 
+const disabledText: string =
+  '   غیر فعال است ! برای استفاده از این قسمت باید وارد حساب کاربری خود شوید'
+
 function NewNavBar() {
   return (
     <>
-      <div className="container mx-auto mt-2 rounded-xl bg-white p-4 ">
+      <div className="!container mx-auto mt-3 rounded-xl bg-white  p-4  ">
         <nav className="hidden flex-row-reverse items-center justify-between gap-3 lg:flex  ">
           <img src={mainLogoDark} alt="" className="w-14" />
           <ul className="container flex flex-row-reverse justify-start bg-white  ">
             {items.map(item => (
               <li key={item.key}>
-                <Link to={item.path}>
-                  <Button
-                    className=" text-news-Items "
-                    variant={'link'}
-                    disabled={item.disabled}
-                  >
-                    {item.label}
-                    {item.icon}
-                  </Button>
-                </Link>
+                <HoverCardMain
+                  text={item.disabled == true ? disabledText : 'none'}
+                >
+                  <Link to={item.path}>
+                    <Button
+                      className=" text-news-Items "
+                      variant={'link'}
+                      disabled={item.disabled}
+                    >
+                      {item.label}
+                      {item.icon}
+                    </Button>
+                  </Link>
+                </HoverCardMain>
               </li>
             ))}
           </ul>
 
-          <Button className=" icon rounded-full !bg-[#F5F5F5]" disabled>
-            <BellAlertIcon className="h-8 text-news-Items" />
-          </Button>
-          <Button className="icon rounded-full !bg-[#F5F5F5]" disabled>
-            <Cog6ToothIcon className="h-8 text-news-Items" />
-          </Button>
+          <HoverCardMain>
+            <Button className=" icon rounded-full !bg-[#F5F5F5]">
+              <BellAlertIcon className="h-8 text-news-Items text-opacity-50" />
+            </Button>
+          </HoverCardMain>
+          <HoverCardMain>
+            <Button className=" icon rounded-full !bg-[#F5F5F5]">
+              <Cog6ToothIcon className="h-8 text-news-Items text-opacity-50" />
+            </Button>
+          </HoverCardMain>
 
           <NavigationMenu>
             <NavigationMenuList>
@@ -123,9 +135,11 @@ function NewNavBar() {
             <Button className="icon rounded-full bg-white">
               <UserIcon className="h-8 text-news-Items hover:text-white" />
             </Button>
-            <Button className="icon rounded-full bg-[#F5F5F5] hover:text-white">
-              <BellAlertIcon className="h-8 text-news-Items hover:text-white" />
-            </Button>
+            <HoverCardMain>
+              <Button className=" icon rounded-full !bg-[#F5F5F5]">
+                <BellAlertIcon className="h-8 text-news-Items text-opacity-50" />
+              </Button>
+            </HoverCardMain>
           </li>
           <img src={mainLogoDark} alt="" className="w-14" />
 
@@ -135,10 +149,10 @@ function NewNavBar() {
                 <EllipsisVerticalIcon className="h-8 text-news-Items hover:text-white" />
               </Button>
             </SheetTrigger>
-            <SheetContent className="rounded-l-2xl border-none bg-persian-blue-dark pr-0 text-white">
+            <SheetContent className="!max-h-screen rounded-l-2xl border-none bg-persian-blue-dark pr-0 text-white">
               <SheetHeader>
                 <SheetTitle>
-                  <ul className="mt-3 flex flex-col items-end space-y-4">
+                  <ul className="mt-3 flex flex-col items-end space-y-4 ">
                     {items.map(item => (
                       <li key={item.key}>
                         <Link to={item.path}>
@@ -156,13 +170,11 @@ function NewNavBar() {
                     <img
                       src={logoInMobile}
                       alt=""
-                      className="mx-auto w-72 pt-24"
+                      className="mx-auto w-60 pt-24"
                     />
                     <CopyRight className="pt-20" />
                   </ul>
                 </SheetTitle>
-                <SheetDescription></SheetDescription>
-                <SheetFooter></SheetFooter>
               </SheetHeader>
             </SheetContent>
           </Sheet>

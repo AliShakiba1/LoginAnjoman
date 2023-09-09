@@ -24,7 +24,7 @@ const CopyRight = lazy(() => import('../../../Components/CopyRight'))
 
 function AboutUs() {
   return (
-    <div className="container mx-auto  p-4 text-right">
+    <div className="container mx-auto  p-4 text-right mt-4">
       <h1 className="mb-3 text-lg">“چطور شد که این پلتفرم ایجاد شد” </h1>
       <h3 className="mb-3 text-[#AEAEAE] ">
         ما دو نفر بودیم که یک درخواست ساده از استاد خود در دانشکده دریافت کردیم.
@@ -44,9 +44,9 @@ function AboutUs() {
         alt="youWantKnowMoreVector"
         className="-ml-5 w-60"
       />
-      <h2 className="mb-3 text-lg">“اعضای انجمن”</h2>
+      <h2 className="mb-5 -mt-14 text-lg">“اعضای انجمن”</h2>
       <img src={member} loading="lazy" alt="" />
-      <h2 className="mb-3 text-lg">“همکاری با ما”</h2>
+      <h2 className="my-5 text-lg">“همکاری با ما”</h2>
       <h3 className="text-[#AEAEAE]">
         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم ایپسوم
         متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ لورم ایپسوم متن ساختگی با
@@ -90,7 +90,7 @@ function AboutUs() {
               <ChatBubbleLeftEllipsisIcon className="iconIncideInput relative" />
             </Input>
             <Input
-              label=": ضمینه فعالیت "
+              label=": رزومه"
               placeholder={'... فایل رزومه خود را برای ما ارسال کنید'}
               type="phoneNUmber"
               htmlFor="phoneNUmber"

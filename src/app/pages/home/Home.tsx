@@ -48,9 +48,10 @@ function Home() {
         <div className="lg:col-start-1 lg:row-start-2">
           <CalendarFooterPart />
         </div>
-        <div className="lg:col-start-5 lg:row-start-2 flex flex-col items-end lg:col-end-13 overflow-hidden overflow-y-scroll">
+        <div className="group flex flex-col items-end  lg:col-start-5  lg:col-end-13 lg:row-start-2">
           <p> « اخبار مربوط به انجمن »</p>
-          <div className='flex '>
+          <div className="flex overflow-hidden overflow-x-scroll max-w-3xl  ">
+            <News />
             <News />
             <News />
             <News />
