@@ -12,7 +12,7 @@ import { lazy, useEffect, useState } from 'react'
 
 import { Link, Outlet } from 'react-router-dom'
 
-import { mainLogo, mainLogo } from '../../../../core/values/images-address'
+import { mainLogo } from '../../../../core/values/images-address'
 import NavBarPhone from './NavBarPhone'
 
 // import Loading from '../../Loading/Components/Loading'
