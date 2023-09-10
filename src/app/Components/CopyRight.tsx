@@ -5,7 +5,7 @@ function CopyRight(props :any) {
   return (
     <>
       <div
-        className={`mx-auto mt-6 text-center text-sm text-white  ${props.className}`}
+        className={`mx-auto mt-6 text-center text-xs sm:text-sm text-white  ${props.className}`}
       >
         توسعه یافته توسط
         <Link to={'/'} className="text-loghman">

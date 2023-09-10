@@ -12,7 +12,7 @@ import { lazy, useEffect, useState } from 'react'
 
 import { Link, Outlet } from 'react-router-dom'
 
-import { mainLogo, mainLogoDark } from '../../../../core/values/images-address'
+import { mainLogo, mainLogo } from '../../../../core/values/images-address'
 import NavBarPhone from './NavBarPhone'
 
 // import Loading from '../../Loading/Components/Loading'
@@ -25,7 +25,7 @@ function NavBar(props: any) {
   const [modal, setModal] = useState(false)
 
   const modalHandler = () => {
-    setModal((perv)=> {
+    setModal(perv => {
       return !perv
     })
   }
@@ -86,11 +86,14 @@ function NavBar(props: any) {
               <BellAlertIcon className="icon " />
               <Cog6ToothIcon className="icon hidden lg:block" />
             </div>
-            <img src={mainLogoDark} alt="" className="h-[3.25rem] lg:hidden" />
-            <EllipsisVerticalIcon onClick={modalHandler} className="icon lg:hidden " />
+            <img src={mainLogo} alt="" className="h-[3.25rem] lg:hidden" />
+            <EllipsisVerticalIcon
+              onClick={modalHandler}
+              className="icon lg:hidden "
+            />
             <ul className="mt-3 hidden flex-row-reverse  lg:flex">
               <img
-                src={mainLogoDark}
+                src={mainLogo}
                 alt=""
                 className="hidden h-[3.25rem] pl-8 lg:block"
               />

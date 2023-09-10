@@ -1,24 +1,16 @@
-import {
-  mainLogoDark,
-  uniLoginPic,
-} from '../../../../core/values/images-address'
+import { mainLogo, uniLoginPic } from '../../../../core/values/images-address'
 
-import {
+import { ArrowSmallRightIcon } from '@heroicons/react/24/outline'
 
-  ArrowSmallRightIcon,
- 
-} from '@heroicons/react/24/outline'
-
-import { memo  } from 'react'
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
 
 import CopyRight from '../../../Components/CopyRight'
 
 import { Formik } from 'formik'
+import { registerSchema } from '../../../helper/loginValidation'
 import FormComponents from './FormComponents'
 import { IRegisterFrom } from './Register.types'
-import { registerSchema } from '../../../helper/loginValidation'
-
 
 const majors = [
   {
@@ -33,7 +25,6 @@ const majors = [
   },
 ]
 
-
 const Register = () => {
   const initialValues: IRegisterFrom = {
     major: {},
@@ -45,7 +36,7 @@ const Register = () => {
 
   return (
     <div className="">
-      <img src={mainLogoDark} className=" m-3 mx-auto h-16  " alt="mainLogo" />
+      <img src={mainLogo} className=" m-3 mx-auto h-16  " alt="mainLogo" />
       <div className=" flex flex-col items-center justify-center gap-60 xl:mt-0 xl:flex-row-reverse xl:gap-40 2xl:gap-96">
         <div className=" rounded-3xl border-2 border-white  pt-4   sm:w-96">
           <span className="flex justify-end gap-10 pr-7  text-xl text-white">

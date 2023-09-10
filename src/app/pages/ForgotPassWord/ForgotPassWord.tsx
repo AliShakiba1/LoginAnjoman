@@ -1,6 +1,6 @@
 import { ArrowSmallRightIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { memo } from 'react'
-import { mainLogoDark, uniLoginPic } from '../../../core/values/images-address'
+import { mainLogo, uniLoginPic } from '../../../core/values/images-address'
 
 import CopyRight from '../../Components/CopyRight'
 
@@ -24,7 +24,7 @@ function ForgotPassWord() {
   })
   return (
     <div>
-      <img src={mainLogoDark} className=" m-3 mx-auto h-16  " alt="mainLogo" />
+      <img src={mainLogo} className=" m-3 mx-auto h-16  " alt="mainLogo" />
       <div className="mt-32 flex flex-col items-center justify-center gap-32 xl:mt-0 xl:flex-row-reverse xl:gap-40 2xl:gap-96">
         <div className=" pt4 rounded-3xl border-2  border-white p-1 ">
           <span className="flex justify-end gap-10 pr-7 pt-4 text-xl text-white">

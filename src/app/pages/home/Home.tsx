@@ -48,13 +48,13 @@ function Home() {
         <div className="lg:col-start-1 lg:row-start-2">
           <CalendarFooterPart />
         </div>
-        <div className="group flex flex-col items-end  lg:col-start-5  lg:col-end-13 lg:row-start-2">
+        <div className="group flex flex-col items-end   overflow-hidden  lg:col-start-5 lg:col-end-13 lg:row-start-2 ">
           <p> « اخبار مربوط به انجمن »</p>
-          <div className="flex overflow-hidden overflow-x-scroll max-w-3xl  ">
+          <div className="flex flex-row-reverse items-center  w-11/12  gap-3 overflow-hidden overflow-x-scroll  p-10  ">
             <News />
             <News />
             <News />
-            <News />
+
             <News />
           </div>
         </div>

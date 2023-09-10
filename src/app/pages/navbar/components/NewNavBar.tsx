@@ -24,6 +24,12 @@ import {
 } from '@/components/ui/navigation-menu'
 
 import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover'
+
+import {
   Sheet,
   SheetContent,
   SheetDescription,
@@ -133,8 +139,16 @@ function NewNavBar() {
         <nav className=" flex items-center justify-between gap-2 lg:hidden">
           <li className="space-x-5">
             <Button className="icon rounded-full bg-white">
-              <UserIcon className="h-8 text-news-Items hover:text-white" />
+              <Popover>
+                <PopoverTrigger>
+                  <UserIcon className="h-8 text-news-Items hover:text-white" />
+                </PopoverTrigger>
+                <PopoverContent className="m-3 max-w-fit text-news-Items shadow-2xl">
+                  <Link to={'/login'}>ورود به حساب کاربری</Link>
+                </PopoverContent>
+              </Popover>
             </Button>
+
             <HoverCardMain>
               <Button className=" icon rounded-full !bg-[#F5F5F5]">
                 <BellAlertIcon className="h-8 text-news-Items text-opacity-50" />

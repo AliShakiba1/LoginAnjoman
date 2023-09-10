@@ -6,7 +6,7 @@ import {
   UserIcon,
 } from '@heroicons/react/24/outline'
 import { memo } from 'react'
-import dummyPic from './nwesTest.png'
+import dummyPic from './imgtest.png'
 
 const dummyData = {
   header: 'سال نو مبارک',
@@ -21,35 +21,27 @@ const dummyData = {
 const News = () => {
   return (
     <>
-      <article className="m-12 grid h-[15rem] min-w-[20rem] grid-cols-5 grid-rows-6 rounded-2xl bg-news-Items p-3 text-right shadow-xl lg:w-[26rem]">
-        <h1 className=" col-start-4 col-end-6  row-start-1 row-end-2 max-h-3">
+      <article className=" w-64">
+        <div className="flex h-10 items-baseline justify-between rounded-t-xl  bg-headLine p-2 px-3 text-white">
+          <p className="text-xs">ادامه مطلب</p>
           {dummyData.header}
-        </h1>
-        <h3 className="  col-start-4 col-end-6 row-start-2 row-end-5 text-xs">
-          {dummyData.contet}
-        </h3>
-        <img
-          className="  col-span-4 col-start-1 row-span-3 row-start-1 -translate-x-7 -translate-y-8 "
-          src={dummyData.pic}
-          alt="article Picture"
-        />
-        <h5 className=" col-start-3 col-end-6 lg:mt-12 mt-20 self-center rounded-lg bg-white p-1 lg:p-2 text-xs text-black ">
-          {dummyData.tag}
-        </h5>
-        <div className=" col-span-3 col-start-1 row-start-4 row-end-5 flex gap-2 ">
-          <h4 className=" centering self-center rounded-lg bg-white  p-2 text-xs  text-black">
-            {dummyData.time}
-            <CalendarDaysIcon className="h-5 pl-0.5 " />
-          </h4>
-          <h4 className=" centering self-center rounded-lg bg-white p-1  text-xs  text-black ">
-            {dummyData.writer}
-            <UserIcon className="h-5 pl-0.5" />
-          </h4>
         </div>
-        <button className=" col-span-2 col-start-1 flex h-14 w-28 lg:w-36 -translate-x-3 -translate-y-2 flex-row-reverse items-center justify-center  rounded-bl-xl rounded-tr-xl  bg-white pr-5 text-news-Items ">
-          ادامه مطلب
-          <ChevronLeftIcon className="h-8 " />
-        </button>
+        <img
+          src={dummyData.pic}
+          alt="picture of news"
+          className="rounded-none w-full "
+        />
+        <div className="flex flex-row-reverse justify-between -mt-9 mx-2 mb-2 ">
+          <p className="flex  flex-row-reverse items-center gap-0.5 rounded-md bg-news-Items px-1.5 text-xs text-white ">
+            <UserIcon className="w-7" /> {dummyData.writer}
+          </p>
+          <p className="flex flex-row-reverse  items-center gap-0.5 rounded-md bg-news-Items px-1.5 text-xs text-white ">
+            <ClockIcon className="w-7" /> {dummyData.time}
+          </p>
+        </div>
+        <div className=" max-h-20  overflow-hidden  overflow-ellipsis whitespace-pre-line rounded-b-xl bg-white p-3 text-right text-black  ">
+          {dummyData.contet}
+        </div>
       </article>
     </>
   )
