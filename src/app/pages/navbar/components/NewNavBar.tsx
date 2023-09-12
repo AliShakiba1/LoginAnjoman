@@ -143,7 +143,7 @@ function NewNavBar() {
                 <PopoverTrigger>
                   <UserIcon className="h-8 text-news-Items hover:text-white" />
                 </PopoverTrigger>
-                <PopoverContent className="m-3 max-w-fit text-news-Items shadow-2xl">
+                <PopoverContent className="w-46 m-3 text-news-Items shadow-2xl">
                   <Link to={'/login'} className="text-xs">
                     ورود به حساب کاربری
                   </Link>

@@ -44,13 +44,13 @@ function Home() {
         <div className=" lg:col-span-2 lg:col-start-1 lg:ml-3 xl:col-start-1 xl:col-end-4 xl:row-start-1 xl:row-end-3 xl:ml-0">
           <CalendarPart />
         </div>
-        <div className="lg:col-span-4 lg:col-start-3 xl:col-start-1 xl:col-end-4 xl:row-start-4 xl:row-end-5 xl:mt-10">
+        <div className="lg:col-span-4 lg:col-start-3 xl:col-start-1 xl:col-end-4 xl:row-start-4 xl:row-end-5 xl:mt-10 2xl:-mt-0">
           <CalendarFooterPart />
         </div>
-        <div className="lg:col-start-4 xl:col-span-2 xl:col-start-11 xl:row-start-4 xl:mt-10">
-          <p className='text-right mt-3 lg:mt-0'> « اخبار مربوط به انجمن »</p>
+        <div className="lg:col-start-4 xl:col-span-2 xl:col-start-11 xl:row-start-4 xl:mt-10 2xl:-mt-0">
+          <p className="mt-3 text-right lg:mt-0 ">« اخبار مربوط به انجمن »</p>
         </div>
-        <div className="flex flex-row-reverse overflow-x-scroll lg:col-span-4 lg:col-start-1 xl:col-start-5 xl:col-end-13 xl:row-span-2 xl:row-start-5 xl:-mt-16 ">
+        <div className="flex flex-row-reverse overflow-x-scroll lg:col-span-4 lg:col-start-1 xl:col-start-5 xl:col-end-13 xl:row-span-2 xl:row-start-5 xl:-mt-16 2xl:-mt-28  ">
           <News />
           <News />
           <News />
