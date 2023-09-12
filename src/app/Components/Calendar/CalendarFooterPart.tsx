@@ -11,7 +11,7 @@ import CalendarEachClass from './CalendarEachClass'
 
 const CalendarFooterPart = () => {
   return (
-    <div className=" CalendarFooterPart container mt-2 flex w-80 flex-col items-center justify-start gap-3 rounded-2xl bg-white p-0 text-base  sm:w-96  ">
+    <div className=" CalendarFooterPart container  mt-2 flex w-80 flex-col items-center justify-start gap-3 rounded-2xl bg-white p-0 text-base  sm:w-96  ">
       <div className="  flex w-full items-center justify-end  rounded-t-lg bg-headLine p-3  shadow-lg">
         « مدیریت کلاس ها »
       </div>
@@ -72,7 +72,6 @@ const CalendarFooterPart = () => {
             <CalendarEachClass />
           </AccordionContent>
         </AccordionItem>
-      
       </Accordion>
     </div>
   )

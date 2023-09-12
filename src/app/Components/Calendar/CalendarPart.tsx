@@ -64,7 +64,7 @@ const CalendarPart = () => {
   }, [selectedDay])
 
   return (
-    <aside className="container flex  flex-col items-center justify-center p-0 lg:items-start">
+    <aside className="container flex flex-col items-center justify-center p-0 lg:items-start">
       <aside className="  relative flex items-center justify-center p-0 shadow-none   ">
         <Calendar
           value={selectedDay}

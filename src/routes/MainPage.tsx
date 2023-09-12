@@ -15,9 +15,9 @@ import CalendarPart from '../app/Components/Calendar/CalendarPart'
 import ForgotPassWord from '../app/pages/ForgotPassWord/ForgotPassWord'
 import Loading from '../app/pages/Loading/Components/Loading'
 import Register from '../app/pages/Regester/components/Register'
-import NewNavBar from '../app/pages/navbar/components/NewNavBar'
+// import NewNavBar from '../app/pages/navbar/components/NewNavBar'
 
-const NavBar = lazy(() => import('../app/pages/navbar/components/NavBar'))
+const NewNavBar = lazy(() => import('../app/pages/navbar/components/NewNavBar'))
 const AboutUs = lazy(() => import('../app/pages/aboutUs/Components/AboutUs'))
 const Home = lazy(() => import('../app/pages/home/Home'))
 const Page404 = lazy(() => import('../app/pages/404/Page404'))
